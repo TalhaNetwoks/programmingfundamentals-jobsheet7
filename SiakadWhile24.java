@@ -11,7 +11,7 @@ public class SiakadWhile24 {
         double studentCount = input.nextDouble();
 
        while (i < studentCount) {
-        i++;
+             i++;
         System.out.println("Enter the score for the Student : " + (i+1) + ": ");
         score =input.nextInt();
          if (score < 0 || score > 100 )
@@ -21,6 +21,8 @@ public class SiakadWhile24 {
          }
          if (score > 80 && score <=100 ){
             System.out.println(" The Grade of the Student: "+ (i+1)+ " is A");
+            System.out.println("\t -->(Well Done, Keep up the good Work)<--");
+
          }else if (score > 73 && score <= 80  ){
             System.out.println(" The Grade of the Student: "+ (i+1)+ " is B+");
          }else if (score > 65 && score <=73 ){
