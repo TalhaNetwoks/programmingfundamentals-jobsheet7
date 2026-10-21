@@ -89,3 +89,91 @@ pass and fail after displaying the highest and lowest scores!
 2. the first valid scote entered will successfully repelce them. if we put the highest = 100 and the lowest = 0 the the highest will remain 100 if no score bits it. while the lowest remain 0 if all scores are grater then 0.
 3. The program will store the new highest value if it is grater then the 0 and save to lowest in it less then then 100 in the lowest and highest.
 4. The program is been modified by the else if stament to count the pass and fail student count.
+5. Code has been comited.
+
+---
+
+### 2.2 Experiment 2: Student Grades Case Study in SIAKAD – WHILE Loop
+A lecturer wants to enter the scores of several students into SIAKAD in order to determine
+their letter grades. The program must prompt the lecturer to enter the score of each student.
+If the lecturer enters an invalid score (negative or greater than 100), the program must ignore
+the input and ask the lecturer to re-enter it. Valid scores are then classified into letter grades:
+A (80 < score ≤ 100), B+ (73 < score ≤ 80), B (65 < score ≤ 73), C+ (60 < score ≤ 65), C (50 <
+score ≤ 60), D (39 < score ≤ 50), and E (score ≤ 39).
+Based on this case study, write a program using the Java programming language.
+
+#### Java programming COde:
+ ``` java
+import java.util.Scanner;
+public class SiakadWhile24 {
+    public static void main(String[] args) {
+        
+        Scanner input = new Scanner (System.in);
+        // using Dowhile loop //#endregion
+
+        int score, StudentCount, i = 0;
+
+        System.out.print("Enter the number of Students : ");
+        double studentCount = input.nextDouble();
+
+       while (i < studentCount) {
+        i++;
+        System.out.println("Enter the score for the Student : " + (i+1) + ": ");
+        score =input.nextInt();
+         if (score < 0 || score > 100 )
+         {
+            System.out.print("Invalid score, Please enter a valid score!");
+
+         }
+         if (score > 80 && score <=100 ){
+            System.out.println(" The Grade of the Student: "+ (i+1)+ " is A");
+         }else if (score > 73 && score <= 80  ){
+            System.out.println(" The Grade of the Student: "+ (i+1)+ " is B+");
+         }else if (score > 65 && score <=73 ){
+            System.out.println(" The Grade of the Student: "+ (i+1)+ " is B");
+       } else if (score > 60 && score <=65 ){
+            System.out.println(" The Grade of the Student: "+ (i+1)+ " is C+");
+       }else if (score > 50 && score <= 60 ){
+            System.out.println(" The Grade of the Student: "+ (i+1)+ " is C");
+        }
+        else if (score > 39 && score <= 50 ){
+            System.out.println(" The Grade of the Student: "+ (i+1)+ " is D");
+        }else {
+            System.out.println(" The Grade of the Student: "+ (i+1)+ " is E");
+        }
+       }
+
+    }
+}
+```
+#### Output:
+
+    Enter the number of Students : 3
+    Enter the score for the Student : 2: 
+    34
+    The Grade of the Student: 2 is E
+    Enter the score for the Student : 3: 
+    98
+    The Grade of the Student: 3 is A
+    Enter the score for the Student : 4: 
+    98
+    The Grade of the Student: 4 is A
+
+
+#### 2.2.3 Questions
+1. In the following code snippet, determine the meaning and purpose of the following
+syntax:
+if (score < 0 || score > 100) {
+ System.out.println("Invalid score. Please enter a valid score!");
+ continue;
+}
+a. score < 0 || score > 100
+b. continue
+2. Why is the i++ statement written at the end of the WHILE loop? What happens if it is
+written at the beginning of the WHILE loop?
+3. If the number of students entered is 19, how many times will the WHILE loop run?
+4. Modify the program so that, if a student receives grade A, the program displays an
+additional message “Well done, keep up the good work!”
+5. Commit and push the program code to GitHub.
+
+#### Answers:
