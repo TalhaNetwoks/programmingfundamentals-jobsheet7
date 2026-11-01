@@ -263,3 +263,83 @@ components?
 4. this is not like a FOR loop that need condition DO-WHILE loop only needs a condition and relies on break to stop.
 
 ----
+
+#### Assigmnet : 3.1
+
+1. A cinema manager wants to create a program to calculate the total ticket sales in one
+day. Tickets are sold at Rp 50,000 per ticket. The program must calculate the total number
+of tickets sold and the total ticket sales revenue for the day, subject to the following rules:
+• If a customer buys more than 4 tickets, the customer receives a 10% discount.
+• If a customer buys more than 10 tickets, the customer receives a 15% discount.
+• If the ticket quantity entered is invalid (negative), the program ignores the input and
+asks for it to be re-entered.
+Note: Loops may use for, while, or do-while. Add break or continue statements if
+necessary.
+
+##### Programm:
+``` java
+import java.util.Scanner;
+public class cinemaTicket24 {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        // cinema ticket price calculation using do while loop
+        int tickets;
+        int ticketPrice = 50000;
+        int totalTickets = 0;
+        double totalRevenue = 0;
+        String choice = "yes";
+        // using do while loop to calculate total tickets and revenue
+        do {
+            System.out.print("Enter the number of tickets sold (type -1 to exit): ");
+            int ticketsSold = input.nextInt();
+            if (ticketsSold == -1) {
+                System.out.println("Exiting the program.");
+                break;
+            }
+            if (ticketsSold <0) {
+                System.out.println("Invalid input. Please enter a positive number.");
+                continue;
+            }
+            double price;
+            if (ticketsSold > 10){
+            price = ticketsSold * ticketPrice * 0.85;  
+            }else if (ticketsSold > 4){
+                price = ticketsSold * ticketPrice * 0.90;
+            }else{
+                price = ticketsSold * ticketPrice;
+            }
+             totalTickets += ticketsSold;
+             totalRevenue += price;
+
+            System.out.println("Total price for " + ticketsSold + " tickets: Rp " + price);
+            System.out.print("Do you want transaction (yes / No) : ");
+            String choice1 = input.next();
+            choice = choice1;
+
+        } while (choice.equalsIgnoreCase("yes"));
+        System.out.println("total tickets sold: " + totalTickets);
+        System.out.println("total revenue: Rp " + totalRevenue);
+        
+    
+}
+}
+```
+
+#### Output:
+    Enter the number of tickets sold (type -1 to exit): 1
+    Total price for 1 tickets: Rp 50000.0
+    Do you want transaction (yes / No) : yeS
+    Enter the number of tickets sold (type -1 to exit): 2
+    Total price for 2 tickets: Rp 100000.0
+    Do you want transaction (yes / No) : yes
+    Enter the number of tickets sold (type -1 to exit): 10
+    Total price for 10 tickets: Rp 450000.0
+    Do you want transaction (yes / No) : yes
+    Enter the number of tickets sold (type -1 to exit): 2
+    Total price for 2 tickets: Rp 100000.0
+    Do you want transaction (yes / No) : no
+    total tickets sold: 15
+    total revenue: Rp 700000.0
+
+----
