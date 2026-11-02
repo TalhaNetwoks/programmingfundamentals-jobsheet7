@@ -343,3 +343,64 @@ public class cinemaTicket24 {
     total revenue: Rp 700000.0
 
 ----
+#### Assigmnet : 3.2
+
+A parking lot operator wants to create a program to calculate the total parking fees of
+several vehicles. The parking rate is Rp 3,000 per hour for cars and Rp 2,000 per hour for
+motorcycles. The program keeps asking for input as long as the input is not 0. Implement
+the flowchart as a Java program!
+
+``` java 
+import java.util.Scanner;
+public class parkingVihicale {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+    
+
+        String vehicleType;
+        int hoursParked;
+        int totalFee = 0;
+
+        System.out.println("\tWelcome to the Parking Fee Calculator!");
+        
+        do { 
+            System.out.print("\tVehicle type (car = 1/ motorcycle = 2) or (exit = 0) : ");
+            vehicleType = scanner.nextLine().toLowerCase();
+
+            if (vehicleType.equals("0")) {
+                break;
+            }
+
+            System.out.print("\tEnter the number of hours parked : ");
+            hoursParked = scanner.nextInt();
+            scanner.nextLine(); 
+
+            if (vehicleType.equals("1")) {
+                totalFee += hoursParked * 3000;
+            } else if (vehicleType.equals("2")) {
+                totalFee += hoursParked * 2000;
+            } else {
+                System.out.println("\tInvalid vehicle type. Please enter 1 for car or 2 for motorcycle.");
+            }
+
+
+        } while (!vehicleType.equals("0"));
+        System.out.println("\tTotal parking fee: Rp " + totalFee);
+
+    }
+}
+
+```
+#### Output
+
+    Welcome to the Parking Fee Calculator!
+        Vehicle type (car = 1/ motorcycle = 2) or (exit = 0) : 1
+        Enter the number of hours parked : 4
+        Vehicle type (car = 1/ motorcycle = 2) or (exit = 0) : 2
+        Enter the number of hours parked : 3
+        Vehicle type (car = 1/ motorcycle = 2) or (exit = 0) : 1
+        Enter the number of hours parked : 4
+        Vehicle type (car = 1/ motorcycle = 2) or (exit = 0) : 1
+        Enter the number of hours parked : 3
+        Vehicle type (car = 1/ motorcycle = 2) or (exit = 0) : 0
+        Total parking fee: Rp 39000
